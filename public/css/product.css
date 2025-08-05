@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #fffaf8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Product Section */
+.product-detail {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background-color: #fffaf8;
+}
+
+.product-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    border: 2px solid #f78c1c;
+    border-radius: 5px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.thumbnails img {
+    width: 60px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rent-button {
+    margin-top: 1rem;
+    background-color: #f78c1c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rent-button:hover {
+    background-color: #e1780d;
+}
+
+.rent-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.rent-button.btn-success {
+    background-color: #28a745;
+}
+
+.rent-button.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Ensure button is clickable */
+.rent-button {
+    cursor: pointer !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.rent-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(247, 140, 28, 0.5);
+}
+
+/* Disabled rented button styles */
+.rent-button:disabled {
+    background-color: #28a745 !important;
+    color: white !important;
+    cursor: not-allowed !important;
+    opacity: 0.8;
+}
+
+.rent-button:disabled:hover {
+    background-color: #28a745 !important;
+    transform: none !important;
+}
+
+/* Alert container for cart messages */
+#alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.alert {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.product-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.product-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #bf4d29;
+}
+
+.product-info p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* Related Carousel */
+.related {
+    padding: 2rem;
+    text-align: center;
+    background: #fff3e6;
+}
+
+.related h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #e1780d;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.carousel-items {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+}
+
+.item {
+    min-width: 150px;
+    background: white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.item p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+button.prev, button.next {
+    background-color: #f78c1c;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .product-image,
+    .product-info {
+        min-width: 100%;
+    }
+
+    .carousel {
+        flex-direction: column;
+    }
+
+    .carousel-items {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-detail {
+        padding: 0.5rem;
+    }
+
+    .product-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .related {
+        padding: 1rem;
+    }
+
+    .related h3 {
+        font-size: 1.2rem;
+    }
+}

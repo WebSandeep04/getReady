@@ -1,0 +1,16 @@
+$sheet->setCellValue('A1', 'Your Company Name');
+$sheet->setCellValue('M1', 'Date: ' . date('d-m-Y'));
+$sheet->getStyle('A1:M1')->applyFromArray([
+    'fill' => [
+        'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+        'startColor' => ['rgb' => '800080'], // Purple
+    ],
+    'font' => [
+        'bold' => true,
+        'color' => ['rgb' => 'FFFFFF'],
+    ],
+    'alignment' => [
+        'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+    ],
+]); 
